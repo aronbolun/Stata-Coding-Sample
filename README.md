@@ -2,4 +2,14 @@
 
 The samples are a part of a research project I once worked on. There are three sample do-files:
 
-1. 0-run.
+### 0_run.do
+
+Run scripts for the project
+
+### 1_sum.do
+
+Data exploration and generate key summary statistics
+
+### 2_posthoc.do
+
+Post-hoc analyses
