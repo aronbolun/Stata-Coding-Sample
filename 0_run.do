@@ -17,7 +17,7 @@ capture log close
 // global main "/path/to/replication/folder"
 
 if "$main"=="" {
-	if "`c(username)'" == "aaronxiao" { // Bolun's Mac laptop
+	if "`c(username)'" == "aaronxiao" { // Aaron's Mac laptop
 		global main "/Users/aaronxiao/Dropbox/Queueing"
 	}
 	else if "`c(username)'" == "Others" { // Others' PC laptop
@@ -33,13 +33,13 @@ if "$main"=="" {
 }
 
 // Create globals for each subdirectory 
-local subdirectories              ///
-      Data                        ///
-	  Documentation               ///
-	  dofiles                     ///
+local subdirectories                      ///
+      Data                               ///
+	  Documentation                 ///
+	  dofiles                      ///
 	  Paper                       ///
-	  Output                      ///
-	  "Mediation Analysis"        ///
+	  Output                     ///
+	  "Mediation Analysis"      ///
 	  "Response to Reviewers"
 	  
 foreach folder of local subdirectories {
@@ -49,8 +49,8 @@ foreach folder of local subdirectories {
 
 // Create globals for each data subdirectory
 local data_subdirectories         ///
-      MedRoutine                  ///
-	  TurkMD                      ///
+      MedRoutine                 ///
+	  TurkMD                ///
 	  Study3
 
 foreach data_folder of local data_subdirectories {
@@ -62,8 +62,8 @@ foreach data_folder of local data_subdirectories {
 cap mkdir "$Documentation/Relevant Materials"
 
 // Create globals for each dofile subdirectory
-local dofile_subdirectories      ///
-      Study3                     ///
+local dofile_subdirectories            ///
+      Study3                          ///
 	  "Study 1 (MedRoutine)"     ///
 	  "Study 2 (TurkMD)"         
 
@@ -74,13 +74,13 @@ foreach dofile_folder of local dofile_subdirectories {
 
 // Create the global for each output subdirectory
 local output_subdirectories      ///
-      Graphs                     ///
-	  Tables                     ///
+      Graphs                    ///
+	  Tables               ///
 	  Logs             
 
 local output_sub2directories     ///
-	      MedRoutine             ///
-		  TurkMD                 ///
+	      MedRoutine        ///
+		  TurkMD       ///
 		  Study3       	  
 	  
 foreach output_folder of local output_subdirectories {
@@ -103,18 +103,9 @@ adopath ++ "$scripts/programs"
 
 // Preliminaries -------------------------------------------------------------
 // Control which script run
-local 2_MedRoutine_summ_20220929_BX = 1
-local 2_TurkMD_summ_20220929_BX = 1
-local 2_Study3_summ_20220929_BX = 1
-local 4_MedRoutine_posthoc_20220929_BX = 1
-local 4_TurkMD_posthoc_20220929_BX = 1
-local 4_Study3_posthoc_20220922_BX = 1
-
+local 2_MedRoutine_summ_20220929 = 1
+local 4_MedRoutine_posthoc_20220929 = 1
 
 // Run Scripts (the latest version) ---------------------------------------------------------------
-if (`2_MedRoutine_summ_20220929_BX' == 1) do "$dofiles/Study 1 (MedRoutine)/2_MedRoutine_summ_20220929_BX.do"
-if (`2_TurkMD_summ_20220929_BX' == 1) do "$dofiles/Study 2 (TurkMD)/2_TurkMD_summ_20220929_BX.do"
-if (`2_Study3_summ_20220929_BX' == 1) do "$dofiles/Study3/2_Study3_summ_20220929_BX.do"
-if (`4_MedRoutine_posthoc_20220929_BX' == 1) do "$dofiles/Study 1 (MedRoutine)/4_MedRoutine_posthoc_20220929_BX.do"
-if (`4_TurkMD_posthoc_20220929_BX' == 1) do "$dofiles/Study 2 (TurkMD)/4_TurkMD_posthoc_20220929_BX.do"
-if (`4_Study3_posthoc_20220922_BX' == 1) do "$dofiles/Study3/4_Study3_posthoc_20220922_BX.do"
+if (`2_MedRoutine_summ_20220929' == 1) do "$dofiles/Study 1 (MedRoutine)/2_MedRoutine_summ_20220929.do"
+if (`4_MedRoutine_posthoc_20220929' == 1) do "$dofiles/Study 1 (MedRoutine)/4_MedRoutine_posthoc_20220929.do"
