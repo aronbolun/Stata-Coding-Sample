@@ -23,7 +23,7 @@
     ssc install mediation 
 */
 ********************************************************************************
-log using "$Output/Logs/MedRoutine/4_posthoc_20220922.txt", text replace
+log using "$Output/Logs/MedRoutine/2_posthoc.txt", text replace
 global repnum 1000
 global seednum 02138
 
