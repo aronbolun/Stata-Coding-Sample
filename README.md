@@ -8,7 +8,7 @@ Run scripts for the project
 
 ### 1_sum.do
 
-Data exploration and generate key summary statistics
+Data exploration and key summary statistics
 
 ### 2_posthoc.do
 
